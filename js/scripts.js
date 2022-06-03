@@ -1,67 +1,29 @@
-function ruby() {
-    const age = parseInt($("input#age").val());
-    const gender = $("select#gender").val();
-    const dog = $("select#dog").val();
-    const color = $("select#color").val();
-    const food = $("select#food").val();
-
-
-    if (age < 30 && gender === "male" || dog === "Husky" && color === "red" || food === "salad" ) {
-      return true;
-    };
-};
-
-function javaScript() {
+function finalAnswer() {
   const age = parseInt($("input#age").val());
   const gender = $("select#gender").val();
   const dog = $("select#dog").val();
   const color = $("select#color").val();
-  const food = $("select#food").val();
+  const food = $("select#food").val()
 
+  let answer 
 
-  if (age > 30 && gender === "female" || dog === "Beagle" && color === "blue" || food === "wings" ) {
-    return true;
-  };
-};
-
-function cSharp() {
-  const age = parseInt($("input#age").val());
-  const gender = $("select#gender").val();
-  const dog = $("select#dog").val();
-  const color = $("select#color").val();
-  const food = $("select#food").val();
-
-
-  if (age = 30 && gender === "female" || dog === "Pug" && color === "green" || food === "ribs" ) {
-    return true;
-  };
-};
-
-
-function finalAnswer(){
-  const test1 = ruby();
-  const test2 = javaScript();
-  const test3 = cSharp();
-  if (test1 === true) {
-    return "ruby";
-  } else if (test2 === true) {
-    return "JavaScript";
-  } else if (test3 === true) {
-    return "C#";
+  if (age < 30 && gender === "male" || dog === "Husky" && color === "red" || food === "salad" ) {
+    answer = "ruby";
+  } else if (age > 30 && gender === "female" || dog === "Beagle" && color === "blue" || food === "wings" ) {
+    answer = "javaScript";
+  } else if (age === 30 && gender === "female" || dog === "Pug" && color === "green" || food === "ribs" ) {
+    answer = "c#"; 
   } else {
-    return "Try again later";
-  }
+    answer ="css"
+  } 
+return answer;
 };
 
 
-// UI
+
 $(document).ready(function () {
-  
-  
   $("form#languagematch").submit(function(event){
     event.preventDefault();
-  console.log("hello");
-    const age = parseInt($("input#age").val());
     $("#match").text(finalAnswer());
   });
 });
@@ -71,5 +33,9 @@ $(document).ready(function () {
     event.preventDefault();
     $("#match").text("");
     $("#age").val("");
+    $("#gender").val("");
+    $("#dog").val("");
+    $("#color").val("");
+    $("#food").val("");
   });
 });
