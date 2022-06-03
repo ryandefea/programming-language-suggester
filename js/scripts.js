@@ -4,7 +4,8 @@ $(document).ready(function() {
 
     const age = parseInt($("input#age").val());
     const gender = $("select#gender").val();
-    const 
+    const dog = $(select#dog).val();
+    
 
 
   })
